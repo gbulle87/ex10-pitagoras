@@ -149,6 +149,22 @@ class PolishCalculator
 /* ---------------------------------------------------------------------- */
 int main(void)
 {
+    PolishCalculator calculator;
+    std::string expression;
+
+    std::cout << "Digite uma expressão em notação polonesa reversa: ";
+    std::getline(std::cin, expression); // Leitura da expressão do usuário
+
+    try
+    {
+        double result = calculator.evaluate(expression);
+        std::cout << "Resultado: " << result << std::endl;
+    }
+    catch(const std::exception &ex)
+    {
+        std::cerr << "Error: " << ex.what() << std::endl;
+    }
+
     return 0;
 }
 
