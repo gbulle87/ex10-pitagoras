@@ -127,6 +127,11 @@ class PolishCalculator
 
             return stack.top();
         }
+    private:
+        bool isOperator(const std::string &token) const
+        {
+            return token == "+" || token == "-" || token == "*" || token == "/";
+        }
 
 };
 /* ---------------------------------------------------------------------- */
