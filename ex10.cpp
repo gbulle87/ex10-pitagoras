@@ -71,6 +71,13 @@ class Stack
             return elements.back();
         }
 
+        bool isEmpty() const
+        {
+            return elements.empty();
+        }
+
+
+
 
 
 };
