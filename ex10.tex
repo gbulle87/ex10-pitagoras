@@ -141,6 +141,20 @@ class Stack
 
 \end{lstlisting}
 \end{minipage}
+\subsubsection{Método \texttt{evaluate}}
+O método \texttt{evaluate} recebe uma expressão em formato de string e a avalia passo a passo:
+\begin{itemize}
+    \item Separa os tokens da expressão usando um \texttt{std::istringstream}.
+    \item Para cada token:
+      \begin{itemize}
+        \item Empilha números na pilha.
+        \item Quando encontra um operador, desempilha os dois operandos mais recentes, aplica o operador e empilha o resultado de volta.
+      \end{itemize}
+    \item Ao final, verifica se há exatamente um valor na pilha. Se não, lança uma exceção indicando uma "Expressão inválida".
+\end{itemize}
+\newpage
+\section{Função \texttt{main}}
+A função \texttt{main} controla a execução do programa, interagindo com o usuário e utilizando a calculadora polonesa reversa.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografia
