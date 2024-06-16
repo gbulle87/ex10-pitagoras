@@ -64,6 +64,14 @@ class Stack
             elements.pop_back();
         }
 
+          T top() const
+        {
+            if(elements.empty())
+                throw std::out_of_range("Stack<>::top(): pilha vazia");
+            return elements.back();
+        }
+
+
 
 };
 
