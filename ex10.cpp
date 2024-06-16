@@ -82,7 +82,53 @@ class Stack
         }
 
 };
+// Implementação da calculadora polonesa
+class PolishCalculator
+{
+    public:
+        double evaluate(const std::string &expression)
+        {
+            std::istringstream tokens(expression);
+            std::string token;
+            Stack<double> stack;
 
+
+            while(tokens >> token)
+            {
+                std::cout << " Token atual: " << token << std::endl;
+
+                if(isOperator(token))
+                {
+                    if(stack.size() < 2)
+                    {
+                        std::cerr << " Erro: Expressão inválida - faltam operandos" << std::endl;
+                        throw std::runtime_error("Expressão inválida: faltam operandos");
+                    }
+                    double b = stack.top();
+                    stack.pop();
+                    double a = stack.top();
+                    stack.pop();
+                    std::cout << " Aplicando operador " << token << " a " << a << " e " << b << std::endl;
+                    double result = applyOperator(token, a, b);
+                    std::cout << " Resultado da operação: " << result << std::endl;
+                    stack.push(result);
+
+                }
+                else
+                {
+                    double number = std::stod(token);
+                    std::cout << " Empilhando número " << number << " na pilha" << std::endl;
+                    stack.push(number);
+                }
+            }
+
+            if(stack.size() != 1)
+                throw std::runtime_error("Expressão inválida");
+
+            return stack.top();
+        }
+
+};
 /* ---------------------------------------------------------------------- */
 int main(void)
 {
