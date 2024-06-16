@@ -32,7 +32,13 @@
 
 /* ---------------------------------------------------------------------- */
 /* includes */
+
 #include <iostream> /* (Input/output library) Several standard stream objects */
+#include <sstream>
+#include <string>
+#include <vector>
+#include <stdexcept>
+#include <stack>
 
 /* ---------------------------------------------------------------------- */
 /* definitions */
