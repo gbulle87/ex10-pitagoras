@@ -57,6 +57,13 @@ class Stack
             elements.push_back(element);
         }
 
+        void pop()
+        {
+            if(elements.empty())
+                throw std::out_of_range("Stack<>::pop(): pilha vazia");
+            elements.pop_back();
+        }
+
 
 };
 
