@@ -133,6 +133,18 @@ class PolishCalculator
             return token == "+" || token == "-" || token == "*" || token == "/";
         }
 
+        double applyOperator(const std::string &op, double a, double b) const
+        {
+            if(op == "+") return a + b;
+            if(op == "-") return a - b;
+            if(op == "*") return a * b;
+            if(op == "/")
+            {
+                if(b == 0) throw std::runtime_error("Divisão por zero");
+                return a / b;
+            }
+            throw std::runtime_error("Operador inválido");
+        }
 };
 /* ---------------------------------------------------------------------- */
 int main(void)
