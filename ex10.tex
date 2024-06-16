@@ -93,9 +93,54 @@
 Este manual descreve o software da Calculadora Polonesa Reversa implementada em C++. A versão atual é 1.0.0.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Outra seção}
+\section{Implementação e Funcionamento}
 
-Esta é outra seção.
+\subsection{Classe \texttt{Stack}}
+A classe \texttt{Stack} implementa uma pilha genérica usando um vetor para armazenar os elementos. Ela fornece métodos para empilhar (\texttt{push}), desempilhar (\texttt{pop}), acessar o topo (\texttt{top}), verificar se está vazia (\texttt{isEmpty}) e obter o tamanho (\texttt{size}).
+
+\vspace{20pt}
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Implementação da classe \texttt{Stack}}, label={lst:stack}]
+template <typename T>
+class Stack
+{
+    private:
+        std::vector<T> elements;
+
+    public:
+        void push(const T &element)
+        {
+            elements.push_back(element);
+        }
+         void pop()
+        {
+            if(elements.empty())
+                throw std::out_of_range("Stack<>::pop(): pilha vazia");
+            elements.pop_back();
+        }
+
+        T top() const
+        {
+            if(elements.empty())
+                throw std::out_of_range("Stack<>::top(): pilha vazia");
+            return elements.back();
+        }
+
+        bool isEmpty() const
+        {
+            return elements.empty();
+        }
+
+        size_t size() const
+        {
+            return elements.size();
+        }
+
+};
+
+\end{lstlisting}
+\end{minipage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografia
