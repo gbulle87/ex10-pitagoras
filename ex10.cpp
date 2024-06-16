@@ -76,9 +76,10 @@ class Stack
             return elements.empty();
         }
 
-
-
-
+        size_t size() const
+        {
+            return elements.size();
+        }
 
 };
 
