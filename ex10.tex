@@ -156,6 +156,49 @@ O método \texttt{evaluate} recebe uma expressão em formato de string e a avali
 \section{Função \texttt{main}}
 A função \texttt{main} controla a execução do programa, interagindo com o usuário e utilizando a calculadora polonesa reversa.
 
+\begin{lstlisting}[caption={Implementação da função principal \texttt{Main}}, label={lst:main}]
+int main()
+{
+    PolishCalculator calculator;
+    std::string expression;
+
+    std::cout << "Digite uma expressao em notacao polonesa reversa: ";
+    std::getline(std::cin, expression); // Leitura da expressao do usuario
+
+    try
+    {
+        double result = calculator.evaluate(expression);
+        std::cout << "Resultado: " << result << std::endl;
+    }
+    catch(const std::exception &ex)
+    {
+        std::cerr << "Error: " << ex.what() << std::endl;
+    }
+
+    return 0;
+}
+\end{lstlisting}
+
+\section{Instruções de Compilação, Uso e Resolução de Problemas}
+
+\subsection{Instruções de Compilação}
+Para compilar o programa, use o seguinte comando:
+\begin{verbatim}
+$make ex10.out
+\end{verbatim}
+
+\subsection{Instruções de Uso}
+Para usar o programa, execute o binário gerado e digite uma expressão em notação polonesa reversa quando solicitado.
+
+Exemplo de entrada:
+\begin{verbatim}
+Digite uma expressão em notação polonesa reversa: 5 10 * 25 / 5 *
+\end{verbatim}
+Saída esperada:
+\begin{verbatim}
+Resultado: 10
+\end{verbatim}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografia
 %\bibliography{bibliografia}
