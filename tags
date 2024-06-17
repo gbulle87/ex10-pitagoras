@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BF	makefile	/^BF = bf$/;"	m
+BFFLAGS	makefile	/^BFFLAGS = -i on -p both -r on -w on$/;"	m
+BUILD	makefile	/^BUILD = $(shell date +"%g%m%d.%H%M%S")$/;"	m
+CC	makefile	/^CC = gcc$/;"	m
+CCCOLOR	makefile	/^CCCOLOR ?= always$/;"	m
+CCSHARED	makefile	/^CCSHARED = -shared -fPIC$/;"	m
+CFLAGS	makefile	/^CFLAGS = -Wall -Wextra -Wno-unused-result -fdiagnostics-color=$(CCCOLOR) -std=gnu17$/;"	m
+CPPFLAGS	makefile	/^CPPFLAGS = -DVERSION=$(VERSION) -DBUILD="\\"$(BUILD)\\"" -DDEBUG=$(DEBUG) -D$(D) -D_FORTIFY_SOURCE=$(FORTIFY)$/;"	m
+Classe texttt PolishCalculator	ex10.tex	/^\\subsection{Classe \\texttt{PolishCalculator}}$/;"	b
+Classe texttt Stack	ex10.tex	/^\\subsection{Classe \\texttt{Stack}}$/;"	b
+D	makefile	/^D ?= D_$/;"	m
+DEBUG	makefile	/^DEBUG ?= 1$/;"	m
+DEFSYM	makefile	/^DEFSYM = $(subst .,_,$(BUILD))$/;"	m
+FORTIFY	makefile	/^FORTIFY ?= 2$/;"	m
+Fun o texttt main	ex10.tex	/^\\section{Função \\texttt{main}}$/;"	s
+Implementa o e Funcionamento	ex10.tex	/^\\section{Implementação e Funcionamento}$/;"	s
+Instru es de Compila o	ex10.tex	/^\\subsection{Instruções de Compilação}$/;"	b
+Instru es de Compila o Uso e Resolu o de Problemas	ex10.tex	/^\\section{Instruções de Compilação, Uso e Resolução de Problemas}$/;"	s
+Instru es de Uso	ex10.tex	/^\\subsection{Instruções de Uso}$/;"	b
+Introdu o e Vis o Geral	ex10.tex	/^\\section{Introdução e Visão Geral}$/;"	s
+LDLIBS	makefile	/^LDLIBS = -Wl,-no-as-needed -Wl,--defsym,BUILD_$(DEFSYM)=0 -lm -lpthread -lncurses -lcurl `allegro-config --cflags --libs`$/;"	m
+M todo texttt evaluate	ex10.tex	/^\\subsubsection{Método \\texttt{evaluate}}$/;"	b
+MAJOR	makefile	/^MAJOR ?= 0$/;"	m
+MINOR	makefile	/^MINOR ?= 1$/;"	m
+OBJ	makefile	/^OBJ ?=$/;"	m
+PL	makefile	/^PL = swipl$/;"	m
+PLFLAGS	makefile	/^PLFLAGS = --goal=main --stand_alone=true$/;"	m
+PLLD	makefile	/^PLLD = swipl-ld$/;"	m
+PLLDSHARED	makefile	/^PLLDSHARED = -shared$/;"	m
+PPCC	makefile	/^PPCC = g++$/;"	m
+PPCFLAGS	makefile	/^PPCFLAGS = -Wall -Wextra -fdiagnostics-color=$(CCCOLOR) -std=gnu++17$/;"	m
+PPLDLIBS	makefile	/^PPLDLIBS = -Wl,-no-as-needed -Wl,--defsym,BUILD_$(DEFSYM)=0 -lm -lpthread -lncurses -lcurl$/;"	m
+PT	makefile	/^PT = gpt$/;"	m
+PolishCalculator	ex10.cpp	/^class PolishCalculator$/;"	c	file:
+Resolu o de Problemas	ex10.tex	/^\\subsection{Resolução de Problemas}$/;"	b
+SHELL	makefile	/^SHELL=\/bin\/bash -o pipefail$/;"	m
+SRC	makefile	/^SRC ?=$/;"	m
+Stack	ex10.cpp	/^class Stack$/;"	c	file:
+TCCSHARED	makefile	/^TCCSHARED = -shared -fPIC$/;"	m
+TCFLAGS	makefile	/^TCFLAGS = -Wall -Wextra -Werror -std=gnu17$/;"	m
+TCPPFLAGS	makefile	/^TCPPFLAGS = -DVERSION=$(VERSION) -DBUILD="\\"$(BUILD)\\"" -DDEBUG=$(DEBUG) -D$(D) -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=$(FORTIFY)$/;"	m
+TLDLIBS	makefile	/^TLDLIBS = -Wl,-no-as-needed -Wl,--defsym,BUILD_$(DEFSYM)=0 -lm -lpthread -lncurses -lcurl$/;"	m
+VERSION	makefile	/^VERSION = "\\"$(MAJOR).$(MINOR).$(BUILD)\\""$/;"	m
+applyOperator	ex10.cpp	/^        double applyOperator(const std::string &op, double a, double b) const$/;"	f	class:PolishCalculator	file:
+elements	ex10.cpp	/^        std::vector<T> elements;$/;"	m	class:Stack	file:
+evaluate	ex10.cpp	/^        double evaluate(const std::string &expression)$/;"	f	class:PolishCalculator
+isEmpty	ex10.cpp	/^        bool isEmpty() const$/;"	f	class:Stack
+isOperator	ex10.cpp	/^        bool isOperator(const std::string &token) const$/;"	f	class:PolishCalculator	file:
+main	ex10.cpp	/^int main(void)$/;"	f
+pop	ex10.cpp	/^        void pop()$/;"	f	class:Stack
+push	ex10.cpp	/^        void push(const T &element)$/;"	f	class:Stack
+size	ex10.cpp	/^        size_t size() const$/;"	f	class:Stack
+top	ex10.cpp	/^          T top() const$/;"	f	class:Stack
