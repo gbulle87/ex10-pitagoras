@@ -138,7 +138,37 @@ class Stack
         }
 
 };
+\subsection{Classe \texttt{PolishCalculator}}
+A classe \texttt{PolishCalculator} avalia expressões matemáticas na notação polonesa reversa. Ela utiliza uma instância da classe \texttt{Stack} para manipular os operandos e operadores durante a avaliação.
 
+\vspace{20pt}
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Implementação da classe \texttt{PolishCalculator}}, label={lst:polishcalculator}]
+// Implemento da calculadora polonesa
+class PolishCalculator
+{
+    public:
+        double evaluate(const std::string &expression)
+        {
+            std::istringstream tokens(expression);
+            std::string token;
+            Stack<double> stack;
+
+            while(tokens >> token)
+            {
+                if(isOperator(token))
+                {
+                    double b = stack.top();
+                    stack.pop();
+                    double a = stack.top();
+                    stack.pop();
+                    double result = applyOperator(token, a, b);
+                    std::cout << "Aplicando operador " << token << " a " << a << " e " << b << " resulta em " << result << std::endl;
+                    stack.push(result);
+                }
+     [...]
+};
 \end{lstlisting}
 \end{minipage}
 \subsubsection{Método \texttt{evaluate}}
